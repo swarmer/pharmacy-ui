@@ -1,0 +1,41 @@
+.navbar.bg-inverse {
+    background-color: #88FF88 !important;
+}
+
+.navbar.bg-inverse a.navbar-brand {
+    font-weight: bold;
+    color: #000000 !important;
+}
+
+.navbar.bg-inverse a.nav-link {
+    color: #000000 !important;
+}
+
+body {
+    padding-top: 5rem;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.section-title > button {
+    margin-left: 10px;
+}
+
+.drug-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    background-color: #EEEEEE;
+}
+
+.pharmacy-heading {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+#pharmacy-list > ul {
+    margin-bottom: 20px;
+}

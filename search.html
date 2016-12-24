@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Pharmacy</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+      crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" crossorigin="anonymous" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+      crossorigin="anonymous" defer></script>
+
+    <script src="https://unpkg.com/vue/dist/vue.js" defer></script>
+
+    <script src="/search.js" defer></script>
+
+    <!-- Custom styles for this template -->
+    <link href="pharmacy.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="#">Pharmacy</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/drugs.html">Drugs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pharmacies.html">Pharmacies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/search.html">Search</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="container" id="search-form">
+        <h1 class="pharmacy-heading">Search</h1>
+
+        <input class="form-control" v-on:input="search" type="text" placeholder="Search text" id="search-input">
+
+        <h4 class="pharmacy-heading">Drugs</h4>
+        <ul class="list-group" v-cloak>
+          <p v-if="drugs.length === 0" class="text-xs-center">
+            No drugs found
+          </p>
+
+          <li v-for="drug in drugs" class="list-group-item">
+            {{ drug.name }}
+          </li>
+        </ul>
+
+        <h4 class="pharmacy-heading">Pharmacies</h4>
+        <ul class="list-group" v-cloak>
+          <p v-if="pharmacies.length === 0" class="text-xs-center">
+            No pharmacies found
+          </p>
+
+          <li v-for="pharmacy in pharmacies" class="list-group-item">
+            {{ pharmacy.name }}
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+  </body>
+</html>
